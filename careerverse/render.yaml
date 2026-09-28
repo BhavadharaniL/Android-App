@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: careerverse
+    env: node
+    plan: free
+    buildCommand: cd mobile && npm install && npx expo export --platform web && cd ../backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
